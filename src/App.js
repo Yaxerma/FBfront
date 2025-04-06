@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import CreatePost from './components/CreatePost';
 import PostList from './components/PostList';
+import Sidebar from './components/Sidebar';
 import './App.css';
 
 const API_URL = 'http://localhost:5000/api';
@@ -48,16 +49,19 @@ function App() {
   return (
     <div className="app">
       <header>
-        <h1>Facebook lite</h1>
+        <h1>Facebook Lite</h1>
       </header>
-      <main>
-        <CreatePost onCreatePost={handleCreatePost} />
-        <PostList
-          posts={posts}
-          onLike={handleLike}
-          friends={friends}
-        />
-      </main>
+      <div className="main-content">
+        <main>
+          <CreatePost onCreatePost={handleCreatePost} />
+          <PostList
+            posts={posts}
+            onLike={handleLike}
+            friends={friends}
+          />
+        </main>
+        <Sidebar friends={friends} />
+      </div>
     </div>
   );
 }

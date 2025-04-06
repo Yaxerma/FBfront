@@ -23,7 +23,7 @@ const Post = ({ post, onLike, friends }) => {
                         key={friend}
                         onClick={() => handleLike(friend)}
                     >
-                        {post.likedBy.includes(friend) ? `Unlike as ${friend}` : `Like as ${friend}`}
+                        {post.likedBy.includes(friend) ? `👎 ${friend}` : `👍 ${friend}`}
                     </button>
                 ))}
             </div>
